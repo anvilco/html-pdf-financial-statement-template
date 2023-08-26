@@ -9,29 +9,10 @@ import LineItems from './LineItems'
 import Totals from './Totals'
 import Footer from './Footer'
 
+import statementData from './statement-data'
+
 const Container = styled.div`
 `
-
-const lineItems = [
-  {
-    quantity: '2',
-    description: 'Blue large widgets',
-    price: '$15.00',
-    subtotal: '$30.00',
-  },
-  {
-    quantity: '4',
-    description: 'Green medium widgets',
-    price: '$10.00',
-    subtotal: '$40.00',
-  },
-  {
-    quantity: '5',
-    description: 'Red small widgets with logo',
-    price: '$7.00',
-    subtotal: '$35.00',
-  },
-]
 
 const Statement = () => (
   <Container>
@@ -49,7 +30,7 @@ const Statement = () => (
     />
 
     <LineItems
-      items={lineItems}
+      transactions={statementData.transactions}
     />
 
     <Totals
