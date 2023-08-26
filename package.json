@@ -1,0 +1,44 @@
+{
+  "name": "html-pdf-financial-statement-template",
+  "version": "1.0.0",
+  "description": "An HTML monthly statement template for financial institutions for use in a browser and with HTML to PDF generation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-pdf:plain-html": "yarn babel-node ./generate-pdf.js",
+    "generate-pdf:react": "yarn babel-node ./react-pdf/generate-pdf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anvilco/html-pdf-financial-statement-template.git"
+  },
+  "keywords": [
+    "pdf",
+    "html",
+    "react",
+    "api",
+    "statement",
+    "monthly statement",
+    "financial services",
+    "template"
+  ],
+  "author": "Anvil Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anvilco/html-pdf-financial-statement-template/issues"
+  },
+  "homepage": "https://github.com/anvilco/html-pdf-financial-statement-template#readme",
+  "dependencies": {
+    "@anvilco/anvil": "^3.0.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "@babel/node": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5"
+  }
+}
