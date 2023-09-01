@@ -9,7 +9,6 @@ const TableContainer = styled.table`
   th {
     text-align: left;
     color: #999;
-    border-bottom: 2px solid #ddd;
     padding: 10px 0 15px 0;
     font-size: 0.75em;
     text-transform: uppercase;
@@ -19,6 +18,14 @@ const TableContainer = styled.table`
     }
   }
 
+  thead th {
+    border-bottom: 2px solid #ddd;
+  }
+
+  tfoot td, tfoot th {
+    padding: 15px 0;
+    border-top: 2px solid #ddd;
+  }
 
   td {
     padding: 15px 0;
@@ -36,33 +43,32 @@ const TableContainer = styled.table`
       border-bottom: 2px solid #ddd;
     }
   }
-
-  th.heading-quantity {
-    width: 50px;
-  }
-  th.heading-price {
-    text-align: right;
-    width: 100px;
-  }
-  th.heading-subtotal {
-    width: 100px;
-  }
 `
 
 const Table = ({
-  headings,
+  headRow,
+  footRow,
   children,
   hasBottomBorder,
 }) => (
   <TableContainer className={hasBottomBorder ? 'has-bottom-border' : ''}>
     <thead>
       <tr>
-        {headings}
+        {headRow}
       </tr>
     </thead>
     <tbody>
       {children}
     </tbody>
+    {
+      footRow ? (
+        <tfoot>
+          <tr>
+            {footRow}
+          </tr>
+        </tfoot>
+      ) : null
+    }
   </TableContainer>
 )
 

@@ -1,3 +1,4 @@
+import { toUpperCaseFirstLetter } from '../lib/formatters'
 
 const YEAR = new Date().getFullYear()
 function generateDate (monthDay) {
@@ -10,7 +11,7 @@ function generateDescription ({
   preposition,
   party,
 }) {
-  return `${type} $${Math.abs(amount).toFixed(2)}${preposition ? ` ${preposition} ${party}` : ''}`
+  return `${toUpperCaseFirstLetter(type)} $${Math.abs(amount).toFixed(2)}${preposition ? ` ${preposition} ${party}` : ''}`
 }
 
 const TYPE_PURCHASE = 'purchase'
@@ -33,7 +34,7 @@ const transactions = [
     amount: -12,
     fee: 0,
     type: TYPE_PURCHASE,
-    preposition: 'at'
+    preposition: 'at',
     party: 'Sammy\'s widgets'
   },
   {
@@ -41,15 +42,15 @@ const transactions = [
     amount: -4,
     fee: 0,
     type: TYPE_PURCHASE,
-    preposition: 'at'
+    preposition: 'at',
     party: 'Acme Coffee Co.'
   },
   {
     date: generateDate('11-10'),
     amount: -140,
-    fee: 0.14,
+    fee: -0.14,
     type: TYPE_WITHDRAWL,
-    preposition: 'at'
+    preposition: 'at',
     party: 'Edgewood and Main st ATM'
   },
   {
@@ -57,38 +58,39 @@ const transactions = [
     amount: 2000,
     fee: 0,
     type: TYPE_DEPOSIT,
-    preposition: 'from'
+    preposition: 'from',
     party: 'Eagleclaw productions payroll'
   },
   {
     date: generateDate('11-20'),
     amount: -100,
-    fee: 0.10,
+    fee: -0.10,
     type: TYPE_SEND,
-    preposition: 'to'
+    preposition: 'to',
     party: 'Pat Reynolds'
   },
   {
     date: generateDate('11-20'),
     amount: 50,
-    fee: 1,
+    fee: -1,
     type: TYPE_RECEIVE,
-    preposition: 'from'
+    preposition: 'from',
     party: 'Jane Lowell'
   },
 ]
 
 export default {
+  accountName: 'Alexis Smith'
   accountNumber: '123567744',
   startDate: START_DATE,
   endDate: END_DATE,
   startBalance: START_BALANCE,
   endBalance: transactions.reduce((acc, transaction) => (
     acc + transaction.amount
-  ), START_BALANCE)
+  ), START_BALANCE),
   totalFees: transactions.reduce((acc, transaction) => (
     acc + transaction.fee
-  ), 0)
+  ), 0),
   transactions: transactions.map((transaction) => ({
     description: generateDescription(transaction),
     ...transaction,

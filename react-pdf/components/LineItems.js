@@ -4,57 +4,93 @@ import styled from 'styled-components'
 
 import Table from './Table'
 
-const Quantity = styled.th`
-  width: 50px;
+import { formatDate, formatDollar, toUpperCaseFirstLetter } from '../lib/formatters'
+
+const DateHeading = styled.th`
+  width: 90px;
 `
 
-const Description = styled.th`
-`
-
-const Price = styled.th`
-  text-align: right;
+const TypeHeading = styled.th`
   width: 100px;
 `
 
-const Subtotal = styled.th`
-  width: 100px;
+const DescriptionHeading = styled.th`
+`
+
+const PriceHeading = styled.th`
+  text-align: right !important;
+  width: 80px;
 `
 
 const RightAlignedCell = styled.td`
   text-align: right;
 `
 
+const FooterTotal = styled.td`
+  text-align: right;
+  font-weight: bold;
+`
+
+function getTotal (transactions, key) {
+  return transactions.reduce((acc, transaction) => (acc + transaction[key]), 0)
+}
+
+function getFormattedTotal (transactions, key) {
+  return formatDollar(getTotal(transactions, key))
+}
+
 const LineItems = ({
-  items
+  transactions
 }) => (
   <Table
-    headings={(
+    headRow={(
       <>
-        <Quantity>Qty</Quantity>
-        <Description>Description</Description>
-        <Price>Price</Price>
-        <Subtotal>Subtotal</Subtotal>
+        <DateHeading>Date</DateHeading>
+        <DescriptionHeading>Description</DescriptionHeading>
+
+        <PriceHeading>Amount</PriceHeading>
+        <PriceHeading>Fees</PriceHeading>
+        <PriceHeading>Total</PriceHeading>
+      </>
+    )}
+    footRow={(
+      <>
+        <th colSpan={2}>Monthly Totals</th>
+        <FooterTotal>{getFormattedTotal(transactions, 'amount')}</FooterTotal>
+        <FooterTotal>{getFormattedTotal(transactions, 'fee')}</FooterTotal>
+        <FooterTotal>{
+          formatDollar(
+            getTotal(transactions, 'amount') +
+            getTotal(transactions, 'fee')
+          )
+        }</FooterTotal>
       </>
     )}
   >
-    {items.map((item, i) => (
+    {transactions.map((item, i) => (
       <tr key={item.description + i}>
-        <td>{item.quantity}</td>
+        <td>{formatDate(item.date)}</td>
         <td>{item.description}</td>
-        <RightAlignedCell>{item.price}</RightAlignedCell>
-        <td><strong>{item.subtotal}</strong></td>
+        <RightAlignedCell>{formatDollar(item.amount)}</RightAlignedCell>
+        <RightAlignedCell>{formatDollar(item.fee)}</RightAlignedCell>
+        <RightAlignedCell>{formatDollar(item.amount + item.fee)}</RightAlignedCell>
       </tr>
     ))}
   </Table>
 )
 
 LineItems.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    quantity: PropTypes.string.isRequired,
+  transactions: PropTypes.arrayOf(PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    subtotal: PropTypes.string.isRequired,
+    fee: PropTypes.number.isRequired,
+    amount: PropTypes.number.isRequired,
+    preposition: PropTypes.string.isRequired,
+    party: PropTypes.string.isRequired,
   })).isRequired,
 }
+
+
 
 export default LineItems

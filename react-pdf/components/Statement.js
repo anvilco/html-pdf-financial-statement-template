@@ -9,7 +9,7 @@ import LineItems from './LineItems'
 import Totals from './Totals'
 import Footer from './Footer'
 
-import statementData from './statement-data'
+import statementData from '../data/statement-details'
 
 const Container = styled.div`
 `
