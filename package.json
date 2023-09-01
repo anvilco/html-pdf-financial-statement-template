@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "web:plain-html": "http-server -c-1 -p 8085",
+    "web:react": "nodemon --exec 'yarn babel-node react-pdf/web/serve-http.js'",
     "generate-pdf:plain-html": "yarn babel-node ./generate-pdf.js",
     "generate-pdf:react": "yarn babel-node ./react-pdf/generate-pdf.js"
   },
@@ -39,6 +41,12 @@
     "@babel/core": "^7.22.11",
     "@babel/node": "^7.22.10",
     "@babel/preset-env": "^7.22.10",
-    "@babel/preset-react": "^7.22.5"
+    "@babel/preset-react": "^7.22.5",
+    "@tinyhttp/app": "^1",
+    "http-server": "^14.1.1",
+    "nodemon": "^3.0.1"
+  },
+  "nodemonConfig": {
+    "delay": 300
   }
 }
