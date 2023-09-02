@@ -36,7 +36,7 @@ const FooterPlacement = createGlobalStyle`
 `
 
 const PageCounter = () => (
-  <PageCounterContainer>
+  <PageCounterContainer className="pdf-only">
     <FooterPlacement />
     Page <CurrentPage /> of <TotalPages />
   </PageCounterContainer>

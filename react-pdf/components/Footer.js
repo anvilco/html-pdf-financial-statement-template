@@ -1,23 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled, { createGlobalStyle } from 'styled-components'
 
 import GlobalStyle from './GlobalStyle'
-
-const FooterContainer = styled.div`
-  margin-top: 30px;
-`
-
-const Thanks = styled.div`
-  font-size: 1.125em;
-
-  img {
-    display: inline-block;
-    position: relative;
-    top: 1px;
-    width: 16px;
-    margin-right: 4px;
-  }
-`
 
 const Info = styled.div`
   position: running(footer);
@@ -44,19 +29,21 @@ const FooterPlacement = createGlobalStyle`
   }
 `
 
-const Footer = () => (
-  <FooterContainer>
+const Footer = ({companyURL, companyEmail, companyPhone}) => (
+  <>
     <FooterPlacement />
-    <Info>
-      <span>hello@useanvil.com</span>|{' '}
-      <span>555 444 6666</span> |{' '}
-      <span>useanvil.com</span>
+    <Info className="pdf-only">
+      <span>{companyEmail}</span>|{' '}
+      <span>{companyPhone}</span> |{' '}
+      <span>{companyURL}</span>
     </Info>
-    <Thanks>
-      <img src="https://github.com/anvilco/html-pdf-financial-statement-template/raw/main/img/heart.png" alt="heart" />
-      <span>Thank you!</span>
-    </Thanks>
-  </FooterContainer>
+  </>
 )
+
+Footer.propTypes = {
+  companyURL: PropTypes.string.isRequired,
+  companyEmail: PropTypes.string.isRequired,
+  companyPhone: PropTypes.string.isRequired,
+}
 
 export default Footer

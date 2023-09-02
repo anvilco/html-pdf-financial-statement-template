@@ -80,7 +80,7 @@ const transactions = [
 ]
 
 export default {
-  accountName: 'Alexis Smith',
+  accountName: 'Alexis Williams',
   accountNumber: '123567744',
   startDate: START_DATE,
   endDate: END_DATE,

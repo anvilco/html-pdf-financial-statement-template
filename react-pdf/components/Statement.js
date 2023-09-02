@@ -8,8 +8,10 @@ import CompanyInfo from './CompanyInfo'
 import StatementInfo from './StatementInfo'
 import Summary from './Summary'
 import LineItems from './LineItems'
+import ContactUs from './ContactUs'
 import Footer from './Footer'
 
+import companyData from '../data/company-details'
 import statementData from '../data/statement-details'
 
 const Container = styled.div`
@@ -22,11 +24,7 @@ const Statement = () => (
 
     <CompanyInfo
       logo={<Logo />}
-      companyName="Anvil Co"
-      companyPhone="(415) 555-3231"
-      companyEmail="hello@useanvil.com"
-      addressStreet="123 Main Street"
-      addressCityStateZip="San Francisco CA, 94103"
+      {...companyData}
     />
 
     <h1>Account Statement</h1>
@@ -43,7 +41,9 @@ const Statement = () => (
       transactions={statementData.transactions}
     />
 
-    <Footer />
+    <ContactUs {...companyData} />
+
+    <Footer {...companyData} />
   </Container>
 )
 

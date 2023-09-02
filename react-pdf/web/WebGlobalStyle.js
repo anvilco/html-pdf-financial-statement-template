@@ -10,6 +10,10 @@ const WebGlobalStyle = createGlobalStyle`
     max-width: 700px;
     margin: 0 auto;
   }
+
+  .pdf-only {
+    display: none !important;
+  }
 `
 
 export default WebGlobalStyle
