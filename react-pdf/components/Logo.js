@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const LogoContainer = styled.div`
-  margin: 20px 0 70px 0;
+  margin: 0 0 10px 0;
 `
 
 const LogoImage = styled.img.attrs({

@@ -2,69 +2,50 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const StatementInfoContainer = styled.table`
-  font-size: 0.875em;
+import { formatDate } from '../lib/formatters'
 
-  td {
-    padding: 4px 0;
-  }
+const StatementInfoContainer = styled.div`
+  font-size: 0.875em;
 `
 
-const ClientName = styled.td`
-  font-size: 1.5em;
-  vertical-align: top;
+const ItemContainer = styled.div`
+  margin: 15px 0;
+`
+
+const ItemLabel = styled.div`
+  color: #999;
+  font-weight: bold;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+`
+
+const ItemInfo = styled.div`
 `
 
 const StatementInfo = ({
-  invoiceNumber,
-  invoiceDate,
-  clientName,
-  companyName,
-  companyEmail,
-  addressStreet,
-  addressCityStateZip,
+  accountName,
+  accountNumber,
+  startDate,
+  endDate,
 }) => (
   <StatementInfoContainer>
-    <tr>
-      <ClientName rowSpan="2">
-        {clientName}
-      </ClientName>
-      <td>
-        {companyName}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        {addressStreet}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Statement Date: <strong>{invoiceDate}</strong>
-      </td>
-      <td>
-        {addressCityStateZip}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Statement No: <strong>{invoiceNumber}</strong>
-      </td>
-      <td>
-        {companyEmail}
-      </td>
-    </tr>
+    <ItemContainer>
+      <ItemLabel>Account</ItemLabel>
+      <ItemInfo>{accountName} - {accountNumber}</ItemInfo>
+    </ItemContainer>
+    <ItemContainer>
+      <ItemLabel>Period</ItemLabel>
+      <ItemInfo>{formatDate(startDate)} - {formatDate(endDate)}</ItemInfo>
+    </ItemContainer>
   </StatementInfoContainer>
 )
 
 StatementInfo.propTypes = {
-  invoiceNumber: PropTypes.string.isRequired,
-  invoiceDate: PropTypes.string.isRequired,
-  clientName: PropTypes.string.isRequired,
-  companyName: PropTypes.string.isRequired,
-  companyEmail: PropTypes.string.isRequired,
-  addressStreet: PropTypes.string.isRequired,
-  addressCityStateZip: PropTypes.string.isRequired,
+  accountName: PropTypes.string.isRequired,
+  accountNumber: PropTypes.string.isRequired,
+  startDate: PropTypes.string.isRequired,
+  endDate: PropTypes.string.isRequired,
 }
 
 export default StatementInfo

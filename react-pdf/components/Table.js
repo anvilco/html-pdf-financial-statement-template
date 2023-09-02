@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const TableContainer = styled.table`
-  margin: 70px 0;
+  margin: 0;
   font-size: 0.875em;
 
   th {
@@ -36,8 +36,6 @@ const TableContainer = styled.table`
   }
 
   &.has-bottom-border {
-    margin-bottom: 0;
-
     tbody tr:last-child td {
       padding-bottom: 25px;
       border-bottom: 2px solid #ddd;
