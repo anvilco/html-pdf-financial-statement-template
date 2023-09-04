@@ -19,10 +19,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
+    font-size: 1.5em;
     margin: 0 0 40px 0;
   }
 
   h2 {
+    font-size: 1.25em;
     margin: 60px 0 30px;
   }
 `

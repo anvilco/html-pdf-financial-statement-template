@@ -7,6 +7,8 @@ const CompanyInfoContainer = styled.div`
   font-size: 0.875em;
   margin-top: 5px;
   text-align: right;
+  color: #999;
+  line-height: 1.3;
 `
 
 const CompanyInfo = ({
