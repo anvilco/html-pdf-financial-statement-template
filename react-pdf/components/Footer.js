@@ -17,6 +17,9 @@ const Info = styled.div`
     &:last-child {
       padding-right: 0;
     }
+    &:first-child {
+      padding-left: 0;
+    }
   }
 `
 

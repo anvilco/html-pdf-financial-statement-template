@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const ContactUsContainer = styled.p`
   font-size: 0.75em;
-  margin-top: 100px;
+  margin-top: 70px;
 `
 
 const ContactUs = ({

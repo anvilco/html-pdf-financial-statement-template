@@ -8,7 +8,7 @@ const LogoContainer = styled.div`
 const LogoImage = styled.img.attrs({
   src: 'https://app.useanvil.com/img/email-logo-black.png'
 })`
-  height: 18px;
+  height: 1.25em;
 `
 
 const Logo = () => (

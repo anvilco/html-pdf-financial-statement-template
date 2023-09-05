@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   table {
@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 1.25em;
-    margin: 60px 0 30px;
+    margin: 60px 0 10px;
   }
 `
 
