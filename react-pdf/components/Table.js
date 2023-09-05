@@ -75,7 +75,8 @@ Table.defaultProps = {
 }
 
 Table.propTypes = {
-  headings: PropTypes.node.isRequired,
+  headRow: PropTypes.node.isRequired,
+  footRow: PropTypes.node,
   children: PropTypes.node.isRequired,
   hasBottomBorder: PropTypes.bool,
 }

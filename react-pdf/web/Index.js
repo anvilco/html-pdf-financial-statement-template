@@ -2,7 +2,7 @@ import React from 'react'
 
 const Index = ({title, css, children}) => {
   return (
-    <html class="no-js" lang="en">
+    <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <title>{title}</title>
