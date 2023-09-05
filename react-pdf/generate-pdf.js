@@ -1,7 +1,7 @@
  // Generate a PDF from the HTML code in this repo.
 //
 // Usage:
-// ANVIL_API_TOKEN=your_token yarn react:generate-pdf && open ./generate-react.output.pdf
+// ANVIL_API_TOKEN=your_token yarn generate-pdf:react && open ./generate-react.output.pdf
 
 import fs from 'fs'
 import path from 'path'
