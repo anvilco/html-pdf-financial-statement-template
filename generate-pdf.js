@@ -1,7 +1,7 @@
 // Generate a PDF from the HTML code in this repo.
 //
 // Usage:
-// ANVIL_API_TOKEN=<YOURKEY> node ./generate-pdf.js && open ./generate-plain-html.output.pdf
+// ANVIL_API_TOKEN=<YOURKEY> yarn generate-pdf:plain-html && open ./generate-plain-html.output.pdf
 
 const fs = require('fs')
 const path = require('path')

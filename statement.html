@@ -1,114 +1,131 @@
-<div class="page-container">
-  Page
-  <span class="page"></span>
-  of
-  <span class="pages"></span>
-</div>
+<div class="statement">
 
-<div class="logo-container">
-  <img
-    style="height: 18px"
-    src="https://app.useanvil.com/img/email-logo-black.png"
-  >
-</div>
+  <div class="page-container pdf-only">
+    Page
+    <span class="page"></span>
+    of
+    <span class="pages"></span>
+  </div>
 
-<table class="statement-info-container">
-  <tr>
-    <td rowspan="2" class="client-name">
-      Client Name
-    </td>
-    <td>
-      Anvil Co
-    </td>
-  </tr>
-  <tr>
-    <td>
-      123 Main Street
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Statement Date: <strong>May 24th, 2024</strong>
-    </td>
-    <td>
-      San Francisco CA, 94103
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Statement No: <strong>12345</strong>
-    </td>
-    <td>
-      hello@useanvil.com
-    </td>
-  </tr>
-</table>
+  <div class="company-info">
+    <div class="logo-container">
+      <img
+        style="height: 1.25em"
+        src="https://app.useanvil.com/img/email-logo-black.png"
+      >
+    </div>
+    <div>123 Main Street</div>
+    <div>San Francisco CA, 94103</div>
+    <div>hello@useanvil.com</div>
+    <div>(415) 555-3231</div>
+  </div>
+
+  <h1>Account Statement</h1>
+  <div class="statement-info">
+    <div class="statement-info-item">
+      <div class="statement-info-item-label">Account</div>
+      <div class="statement-info-item-info">Alexis Williams - 123567744</div>
+    </div>
+    <div class="statement-info-item">
+      <div class="statement-info-item-label">Period</div>
+      <div class="statement-info-item-info">10/31/2024 - 11/29/2024</div>
+    </div>
+  </div>
+
+  <h2>Summary</h2>
+  <table class="table summary has-bottom-border">
+    <thead>
+      <tr>
+        <th class="summary-heading-period">Period</th>
+        <th class="summary-heading-amount">Opening Balance</th>
+        <th class="summary-heading-amount">Closing Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="summary-row">
+        <td>November 2024</td>
+        <td class="summary-amount">$12,000.00</td>
+        <td class="summary-amount">$13,794.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Transactions</h2>
+  <table class="table transactions">
+    <thead>
+      <tr>
+        <th class="transactions-heading-date">Date</th>
+        <th class="transactions-heading-description">Description</th>
+        <th class="transactions-heading-amount">Amount</th>
+        <th class="transactions-heading-amount">Fees</th>
+        <th class="transactions-heading-amount">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>11/4/2024</td>
+        <td>Purchase $12.00 at Sammy's widgets</td>
+        <td class="transaction-amount">-$12.00</td>
+        <td class="transaction-amount">$0.00</td>
+        <td class="transaction-amount">-$12.00</td>
+      </tr>
+      <tr>
+        <td>11/5/2024</td>
+        <td>Purchase $4.00 at Acme Coffee Co.</td>
+        <td class="transaction-amount">-$4.00</td>
+        <td class="transaction-amount">$0.00</td>
+        <td class="transaction-amount">-$4.00</td>
+      </tr>
+      <tr>
+        <td>11/9/2024</td>
+        <td>Withdrawl $140.00 at Edgewood and Main st ATM</td>
+        <td class="transaction-amount">-$140.00</td>
+        <td class="transaction-amount">-$0.14</td>
+        <td class="transaction-amount">-$140.14</td>
+      </tr>
+      <tr>
+        <td>11/14/2024</td>
+        <td>Deposit $2000.00 from Eagleclaw productions payroll</td>
+        <td class="transaction-amount">$2,000.00</td>
+        <td class="transaction-amount">$0.00</td>
+        <td class="transaction-amount">$2,000.00</td>
+      </tr>
+      <tr>
+        <td>11/19/2024</td>
+        <td>Send $100.00 to Pat Reynolds</td>
+        <td class="transaction-amount">-$100.00</td>
+        <td class="transaction-amount">-$0.10</td>
+        <td class="transaction-amount">-$100.10</td>
+      </tr>
+      <tr>
+        <td>11/19/2024</td>
+        <td>Receive $50.00 from Jane Lowell</td>
+        <td class="transaction-amount">$50.00</td>
+        <td class="transaction-amount">-$1.00</td>
+        <td class="transaction-amount">$49.00</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="2">Monthly Totals</th>
+        <td class="transaction-footer-amount">$1,794.00</td>
+        <td class="transaction-footer-amount">-$1.24</td>
+        <td class="transaction-footer-amount">$1,792.76</td>
+      </tr>
+    </tfoot>
+  </table>
 
 
-<table class="line-items-container">
-  <thead>
-    <tr>
-      <th class="heading-quantity">Qty</th>
-      <th class="heading-description">Description</th>
-      <th class="heading-price">Price</th>
-      <th class="heading-subtotal">Subtotal</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2</td>
-      <td>Blue large widgets</td>
-      <td class="right">$15.00</td>
-      <td class="bold">$30.00</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Green medium widgets</td>
-      <td class="right">$10.00</td>
-      <td class="bold">$40.00</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Red small widgets with logo</td>
-      <td class="right">$7.00</td>
-      <td class="bold">$35.00</td>
-    </tr>
-  </tbody>
-</table>
+  <p class="contact-us">
+    If you have found errors or have questions about your statement, please
+    contact Anvil via email at hello@useanvil.com, by phone at (415) 555-3231,
+    or by mail at 123 Main Street San Francisco CA, 94103.
+  </p>
 
-
-<table class="line-items-container has-bottom-border">
-  <thead>
-    <tr>
-      <th>Payment Info</th>
-      <th>Due By</th>
-      <th>Total Due</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="payment-info">
-        <div>
-          Account No: <strong>123567744</strong>
-        </div>
-        <div>
-          Routing No: <strong>120000547</strong>
-        </div>
-      </td>
-      <td class="large">May 30th, 2024</td>
-      <td class="large total">$105.00</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="footer">
-  <div class="footer-info">
-    <span>hello@useanvil.com</span> |
-    <span>555 444 6666</span> |
+  <div class="footer pdf-only">
+    <span>hello@useanvil.com</span>|
+    <span>(415) 555-3231</span> |
     <span>useanvil.com</span>
   </div>
-  <div class="footer-thanks">
-    <img src="https://github.com/anvilco/html-pdf-financial-statement-template/raw/main/img/heart.png" alt="heart">
-    <span>Thank you!</span>
-  </div>
+
 </div>

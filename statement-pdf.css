@@ -6,11 +6,8 @@
 */
 
 .footer {
-  margin-top: 30px;
-}
-
-.footer-info {
   float: none;
+  display: block;
   position: running(footer);
   margin-top: -25px;
 }

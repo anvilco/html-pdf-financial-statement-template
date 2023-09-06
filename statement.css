@@ -4,7 +4,7 @@
 */
 
 body {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 table {
@@ -20,123 +20,162 @@ table tr td:last-child {
   text-align: right;
 }
 
-.bold {
-  font-weight: bold;
+h1 {
+  font-size: 1.5em;
+
+  margin: 0 0 40px 0;
+}
+h2 {
+  font-size: 1.25em;
+  margin: 60px 0 10px;
 }
 
-.right {
-  text-align: right;
+
+/* Transaction & summary table */
+
+table.table {
+  margin:0;
+  font-size:0.875em;
+}
+table.table th{
+  text-align:left;
+  color:#999;
+  padding:10px 0 15px 0;
+  font-size:0.75em;
+  text-transform:uppercase;
+}
+table.table th:last-child{
+  text-align:right;
+}
+table.table thead th{
+  border-bottom:2px solid #ddd;
+}
+table.table tfoot td,
+table.table tfoot th {
+  padding:15px 0;
+  border-top:2px solid #ddd;
+}
+table.table td{
+  padding:15px 0;
+}
+table.table tbody tr:first-child td{
+  padding-top:25px;
+}
+table.table.has-bottom-border tbody tr:last-child td{
+  padding-bottom:25px;
+  border-bottom:2px solid #ddd;
 }
 
-.large {
-  font-size: 1.75em;
-}
-
-.total {
-  font-weight: bold;
-  color: #fb7578;
-}
+/* Company info */
 
 .logo-container {
-  margin: 20px 0 70px 0;
+  margin: 0 0 10px 0;
 }
 
-.statement-info-container {
+.company-info {
+  float: right;
   font-size: 0.875em;
-}
-.statement-info-container td {
-  padding: 4px 0;
-}
-
-.client-name {
-  font-size: 1.5em;
-  vertical-align: top;
-}
-
-.line-items-container {
-  margin: 70px 0;
-  font-size: 0.875em;
-}
-
-.line-items-container th {
-  text-align: left;
+  margin-top: 5px;
+  text-align: right;
   color: #999;
-  border-bottom: 2px solid #ddd;
-  padding: 10px 0 15px 0;
+  line-height: 1.3;
+}
+
+
+/* Statement info */
+
+.statement-info {
+  font-size: 0.875em;
+}
+
+.statement-info-item {
+  margin: 15px 0;
+}
+
+.statement-info-item-label {
+  color: #999;
+  font-weight: bold;
   font-size: 0.75em;
   text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
-.line-items-container th:last-child {
+.statement-info-item-info {}
+
+
+/* Summary */
+
+.summary {}
+
+.summary-row td {
+  font-size: 1.25em;
+}
+
+.summary-heading-period {}
+
+.summary-heading-amount {
+  text-align: right !important;
+}
+
+.summary-amount {
+  text-align: right;
+  font-weight: bold;
+}
+
+
+/* Transactions */
+
+.transactions {}
+
+.transactions-heading-date {
+  width: 90px;
+}
+.transactions-heading-description {}
+.transactions-heading-amount {
+  text-align: right !important;
+  width: 80px;
+}
+
+.transaction-amount {
   text-align: right;
 }
 
-.line-items-container td {
-  padding: 15px 0;
-}
-
-.line-items-container tbody tr:first-child td {
-  padding-top: 25px;
-}
-
-.line-items-container.has-bottom-border tbody tr:last-child td {
-  padding-bottom: 25px;
-  border-bottom: 2px solid #ddd;
-}
-
-.line-items-container.has-bottom-border {
-  margin-bottom: 0;
-}
-
-.line-items-container th.heading-quantity {
-  width: 50px;
-}
-.line-items-container th.heading-price {
+.transaction-footer-amount {
   text-align: right;
-  width: 100px;
-}
-.line-items-container th.heading-subtotal {
-  width: 100px;
+  font-weight: bold;
 }
 
-.payment-info {
-  width: 38%;
+
+/* Contact us */
+
+.contact-us {
   font-size: 0.75em;
-  line-height: 1.5;
+  margin-top: 70px;
 }
+
+
+/* Footer */
 
 .footer {
-  margin-top: 100px;
-}
-
-.footer-thanks {
-  font-size: 1.125em;
-}
-
-.footer-thanks img {
-  display: inline-block;
-  position: relative;
-  top: 1px;
-  width: 16px;
-  margin-right: 4px;
-}
-
-.footer-info {
   float: right;
   margin-top: 5px;
   font-size: 0.75em;
   color: #ccc;
 }
 
-.footer-info span {
+.footer span {
   padding: 0 5px;
   color: black;
 }
 
-.footer-info span:last-child {
+.footer span:first-child {
+  padding-left: 0;
+}
+
+.footer span:last-child {
   padding-right: 0;
 }
 
-.page-container {
+.pdf-only {
   display: none;
 }
