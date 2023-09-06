@@ -6,12 +6,11 @@ The template is intended to be rendered as a PDF with Anvil's [HTML to PDF API](
 
 Rendered as a PDF via the Anvil HTML to PDF API:
 
-<img width="744" alt="HTML to PDF statement" src="https://user-images.githubusercontent.com/69169/115467145-e5357280-a1e5-11eb-942b-2e1a0361252b.png" />
+<img width="1063" alt="HTML to PDF monthly financial statement" src="https://github.com/anvilco/html-pdf-financial-statement-template/assets/69169/4d31a3bc-8da3-46c9-80ea-f6ff027d1034" />
 
 And rendered in a browser:
 
-<img width="772" alt="HTML statement template" src="https://user-images.githubusercontent.com/69169/115467239-0ac27c00-a1e6-11eb-836b-190bf0ab264d.png" />
-
+<img width="780" alt="Monthly financial statement template" src="https://github.com/anvilco/html-pdf-financial-statement-template/assets/69169/a0bfee87-ba9f-44eb-93f0-d23ab3b592e5" />
 
 ## Installing
 
