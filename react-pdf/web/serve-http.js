@@ -23,11 +23,9 @@ function renderIndex () {
   const statementCSS = sheet.instance.toString()
 
   const html = ReactDOMServer.renderToStaticMarkup(
-    sheet.collectStyles(
-      <Index title="Monthly statement" css={statementCSS}>
-        {statementHTML}
-      </Index>
-    )
+    <Index title="Monthly statement" css={statementCSS}>
+      {statementHTML}
+    </Index>
   )
 
   return `<!doctype html>${html}`
