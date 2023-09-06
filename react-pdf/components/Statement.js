@@ -7,7 +7,7 @@ import PageCounter from './PageCounter'
 import CompanyInfo from './CompanyInfo'
 import StatementInfo from './StatementInfo'
 import Summary from './Summary'
-import LineItems from './LineItems'
+import Transactions from './Transactions'
 import ContactUs from './ContactUs'
 import Footer from './Footer'
 
@@ -37,7 +37,7 @@ const Statement = () => (
 
     <h2>Transactions</h2>
 
-    <LineItems
+    <Transactions
       transactions={statementData.transactions}
     />
 

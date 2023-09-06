@@ -10,10 +10,6 @@ const DateHeading = styled.th`
   width: 90px;
 `
 
-const TypeHeading = styled.th`
-  width: 100px;
-`
-
 const DescriptionHeading = styled.th`
 `
 
@@ -39,7 +35,7 @@ function getFormattedTotal (transactions, key) {
   return formatDollar(getTotal(transactions, key))
 }
 
-const LineItems = ({
+const Transactions = ({
   transactions
 }) => (
   <Table
@@ -79,7 +75,7 @@ const LineItems = ({
   </Table>
 )
 
-LineItems.propTypes = {
+Transactions.propTypes = {
   transactions: PropTypes.arrayOf(PropTypes.shape({
     date: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
@@ -93,4 +89,4 @@ LineItems.propTypes = {
 
 
 
-export default LineItems
+export default Transactions
