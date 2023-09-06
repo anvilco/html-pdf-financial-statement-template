@@ -1,22 +1,41 @@
 # HTML monthly financial statement template
 
-This repo contains an HTML statement template you can customize to fit your business needs.
+This repo contains a monthly statement template for financial institutions. Both React + styled components and plain HTML & CSS are supported here. The template contains all information needed to produce a compliant monthly statement according to the [Electronic Fund Transfer Act / Regulation E (12 CEFR part 1005)](https://www.consumerfinance.gov/rules-policy/regulations/1005/9/). Download it! Fork it! Customize to fit your business needs!
 
-The template is meant to be used either in a browser, or rendered as a PDF with Anvil's [HTML to PDF API](https://www.useanvil.com/docs/api/generate-pdf#html--css-to-pdf). Learn more using Anvil to fill, generate, and sign PDFs on our [developer page](https://www.useanvil.com/developers/).
+The template is intended to be rendered as a PDF with Anvil's [HTML to PDF API](https://www.useanvil.com/docs/api/generate-pdf#html--css-to-pdf). Learn more using Anvil to fill, generate, and sign PDFs on our [developer page](https://www.useanvil.com/developers/). It can also be used in a browser.
 
-Here it is rendered in a browser:
-
-<img width="772" alt="HTML statement template" src="https://user-images.githubusercontent.com/69169/115467239-0ac27c00-a1e6-11eb-836b-190bf0ab264d.png" />
-
-And rendered as a PDF via the HTML to PDF API:
+Rendered as a PDF via the Anvil HTML to PDF API:
 
 <img width="744" alt="HTML to PDF statement" src="https://user-images.githubusercontent.com/69169/115467145-e5357280-a1e5-11eb-942b-2e1a0361252b.png" />
 
+And rendered in a browser:
+
+<img width="772" alt="HTML statement template" src="https://user-images.githubusercontent.com/69169/115467239-0ac27c00-a1e6-11eb-836b-190bf0ab264d.png" />
+
+
+## Installing
+
+Fork or clone this repo and run `yarn install` at the root.
+
 ## Rendering as a PDF
 
-You can render the statement with plain HTML and CSS or with React and styled-components. For use with React, see the [react-pdf](./react-pdf/README.md) directory.
+You can render the statement to PDF with either React + styled-components, or plain HTML and CSS. For use with React, see the [react-pdf](./react-pdf/README.md) directory.
+
+### First get an API key
 
 First [sign up](https://app.useanvil.com/signup) for Anvil and get your [API key](https://www.useanvil.com/docs/api/getting-started#api-key).
+
+### Rendering a PDF with React
+
+See the [react-pdf](./react-pdf/README.md) directory for full details on using React to generate an statement PDF. The [react-pdf/generate-pdf.js](./react-pdf/generate-pdf.js) script is used to generate the PDF.
+
+The tl;dr to generate a PDF with React is to `yarn install` at the root of this repo, then run:
+
+```sh
+ANVIL_API_TOKEN=<YOURKEY> yarn generate-pdf:react && open ./generate-react.output.pdf
+```
+
+### Rendering a PDF with plain HTML + CSS
 
 There is an [example node script](./generate-pdf.js) you can use to generate the PDF from plain HTML and CSS. Run the following command at the root of this repo
 
@@ -24,7 +43,7 @@ There is an [example node script](./generate-pdf.js) you can use to generate the
 $ ANVIL_API_TOKEN=<YOURKEY> node ./generate-pdf.js && open ./generate-plain-html.output.pdf
 ```
 
-Vanilla HTML and CSS for the statement template is in the root of this repo. Feel free to view and edit these files to change the output PDF:
+Plain HTML and CSS for the statement template is in the root of this repo. Feel free to view and edit these files to change the output PDF:
 
 * [statement.html](./statement.html) - the statement's HTML
 * [statement.css](./statement.css) - the statement's CSS
@@ -51,27 +70,19 @@ const exampleData = buildHTMLToPDFPayload()
 const { statusCode, data, errors } = await client.generatePDF(exampleData)
 ```
 
-## Rendering as a PDF with React
-
-See the [react-pdf](./react-pdf/README.md) directory for full details on using React to generate an statement PDF.
-
-The tl;dr to generate a PDF with React is to `yarn install` at the root of this repo, then run:
-
-```sh
-ANVIL_API_TOKEN=your_token yarn generate-pdf:react && open ./generate-react.output.pdf
-```
-
 ## Running in a browser
 
-Just get a server running at the root of this repo, and visit `index.html`. e.g.
+You can run both the React and plain HTML versions of the template from the browser:
 
 ```sh
-python -m SimpleHTTPServer 8080
+yarn web:plain-html
+# Visit http://localhost:8085
+
+yarn web:react
+# Visit http://localhost:8086
 ```
 
-Visit http://localhost:8080
-
-See [index.html](https://github.com/anvilco/html-pdf-financial-statement-template/blob/main/index.html) for more information
+See [index.html](./index.html) for more information
 
 ## Template provided by Anvil
 

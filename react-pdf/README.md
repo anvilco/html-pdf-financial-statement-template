@@ -11,3 +11,14 @@ ANVIL_API_TOKEN=your_token yarn generate-pdf:react && open ./generate-react.outp
 See the [generate-pdf.js](./generate-pdf.js) script, and `components` directory here for the code.
 
 <img width="754" alt="React to HTML to PDF" src="https://user-images.githubusercontent.com/69169/129096427-c32ed4f1-bb7b-4bda-86df-830f9f18a690.png">
+
+
+# View this in a browser
+
+You can also view this template in a browser if you'd like. From the root directory, start the web server:
+
+```sh
+yarn web:react
+```
+
+Then visit localhost:8086
