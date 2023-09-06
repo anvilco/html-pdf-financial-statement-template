@@ -1,12 +1,13 @@
 # HTML monthly financial statement template
 
-This repo contains a monthly statement template for financial institutions. Both React + styled components and plain HTML & CSS are supported here. The template contains all information needed to produce a compliant monthly statement according to the [Electronic Fund Transfer Act / Regulation E (12 CEFR part 1005)](https://www.consumerfinance.gov/rules-policy/regulations/1005/9/). Download it! Fork it! Customize to fit your business needs!
+This repo contains a monthly statement template for financial institutions. Both React + styled components and plain HTML & CSS are supported here. The template contains all information needed to produce a compliant monthly statement according to the [Electronic Fund Transfer Act / Regulation E (12 CEFR part 1005)](https://www.consumerfinance.gov/rules-policy/regulations/1005/9/). Download it, clone it, fork it, and customize to fit your business needs.
 
 The template is intended to be rendered as a PDF with Anvil's [HTML to PDF API](https://www.useanvil.com/docs/api/generate-pdf#html--css-to-pdf). Learn more using Anvil to fill, generate, and sign PDFs on our [developer page](https://www.useanvil.com/developers/). It can also be used in a browser.
 
 Rendered as a PDF via the Anvil HTML to PDF API:
 
 <img width="1063" alt="HTML to PDF monthly financial statement" src="https://github.com/anvilco/html-pdf-financial-statement-template/assets/69169/4d31a3bc-8da3-46c9-80ea-f6ff027d1034" />
+
 
 And rendered in a browser:
 
